@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+스트링부트입니다.
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	//ajax() 통신
+	$.ajax({
+		
+	//url : http://localhost:8081/jsonapi
+	url:'http://localhost:8081/khjson',
+	typ:'GET',
+	dataType:'text', //리턴해주는 타입을 지정해준다.
+	
+	success:function(data){
+		console.log("ajax호출");
+		console.log(JSON.parse(data));
+	}, // 서버 요청 전 호출되는 함수 return false; 일 경우 요청 중단!
+		error: function(jqXHR){
+			
+			console.log("실패");
+		}//요청 실패 
+		
+	});
+	
+	
+});
+
+</script>
